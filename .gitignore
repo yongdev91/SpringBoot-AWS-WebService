@@ -1,3 +1,10 @@
 # Project exclude paths
-/.gradle/
-/.idea/
+.gradle
+/build/
+application-oauth.properties
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
