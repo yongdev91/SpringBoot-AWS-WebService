@@ -1,6 +1,6 @@
 package com.study.yong.springboot.domain.posts;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
+import com.study.yong.springboot.domain.BaseTImeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,6 +1,5 @@
 package com.study.yong.springboot.domain.posts;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -61,9 +60,8 @@ public class PostsRepositoryTest {
 
         // then
         Posts posts = postsList.get(0);
-
+        System.out.println("### posts : " + posts.getTitle());
         System.out.println(">>>>>>>>>>>>>>> createDate : " + posts.getCreatedDate() + ", modifiedDate : " + posts.getModifiedDate());
-
         assertThat(posts.getCreatedDate()).isAfter(now);
         assertThat(posts.getModifiedDate()).isAfter(now);
     }

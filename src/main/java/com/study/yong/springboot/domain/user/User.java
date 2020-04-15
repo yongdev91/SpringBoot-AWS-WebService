@@ -1,12 +1,11 @@
 package com.study.yong.springboot.domain.user;
 
-import com.study.yong.springboot.domain.posts.BaseTImeEntity;
+import com.study.yong.springboot.domain.BaseTImeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.net.UnknownServiceException;
 
 @Getter
 @NoArgsConstructor
