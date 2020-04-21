@@ -27,26 +27,35 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
-    //compileOnly 'org.projectlombok:lombok:1.18.10'
+
+    // jpa
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    // lombok
+    compile('org.projectlombok:lombok')
     annotationProcessor 'org.projectlombok:lombok'
+    //compileOnly 'org.projectlombok:lombok:1.18.10'
     //implementation 'org.projectlombok:lombok'
     //testAnnotationProcessor 'org.projectlombok:lombok'
     //testImplementation 'org.projectlombok:lombok'
-    compile('org.projectlombok:lombok')
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+
     // 머스테치 관련 의존성
     compile('org.springframework.boot:spring-boot-starter-mustache')
+
+    // 내장DB
     compile('com.h2database:h2')
-    //testCompile('org.springframework.boot:spring-boot-starter-test')
 
     // 소셜 로그인 등 클라이언트 입장에서 소셜 로그인 기능 구현 시 필요한 의존성
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+
     // 세션 저장소를 DB로 지정한다.
     compile('org.springframework.session:spring-session-jdbc')
 
+    // test
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile("org.springframework.security:spring-security-test")
 
+    // mysql
     compile('mysql:mysql-connector-java')
 }
 configurations {
