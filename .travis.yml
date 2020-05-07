@@ -36,7 +36,7 @@ deploy:
   bucket: fastlane-bucket # S3버킷# CI 실행완료 시 메일로 알람
   key: springboot-webservice.zip
   bundle_type: zip
-  application: springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+  application: springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션임
   deployment_group: springboot-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
   region: ap-northeast-2
   wait-until-deployed: true
