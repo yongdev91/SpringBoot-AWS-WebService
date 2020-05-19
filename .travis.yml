@@ -14,36 +14,36 @@ cache:
 
 script: "./gradlew clean build"
 
-before_deploy:
-  - zip -r freelec-springboot2-webservice *
-  - mkdir -p deploy
-  - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
+#before_deploy:
+#  - zip -r freelec-springboot2-webservice *
+#  - mkdir -p deploy
+#  - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
 
-deploy:
-  - provider: s3
-  access_key_id: $AWS_ACCESS_KEY # Travis repo strring에 설정된 값
-  secret_access_key: $AWS_SECRET_KEY # Travis repo strring에 설정된 값
-  bucket: fastlane-bucket # S3버킷
-  region: ap-northeast-2
-  skip_cleanup: true
-  acl: private # zip 파일접근을 private로
-  local_dir: deploy # before_deploy에서 생성한 디렉토리
-  wait-until-deployed: true
+#deploy:
+#  - provider: s3
+#  access_key_id: $AWS_ACCESS_KEY # Travis repo strring에 설정된 값
+#  secret_access_key: $AWS_SECRET_KEY # Travis repo strring에 설정된 값
+#  bucket: fastlane-bucket # S3버킷
+#  region: ap-northeast-2
+#  skip_cleanup: true
+#  acl: private # zip 파일접근을 private로
+#  local_dir: deploy # before_deploy에서 생성한 디렉토리
+#  wait-until-deployed: true
 
-  - provider: codedeploy
-  access_key_id: $AWS_ACCESS_KEY # Travis repo settings
-  secret_access_key: $AWS_SECRET_KEY # Travis repo strring에 설정된 값
-  bucket: fastlane-bucket # S3버킷# CI 실행완료 시 메일로 알람
+#  - provider: codedeploy
+#  access_key_id: $AWS_ACCESS_KEY # Travis repo settings
+#  secret_access_key: $AWS_SECRET_KEY # Travis repo strring에 설정된 값
+#  bucket: fastlane-bucket # S3버킷# CI 실행완료 시 메일로 알람
 
   #key: springboot-webservice.zip
-  key: freelec-springboot2-webservice.zip
-  bundle_type: zip
+#  key: freelec-springboot2-webservice.zip
+#  bundle_type: zip
   #application: springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션임
-  application: freelec-springboot2-webservice
+#  application: freelec-springboot2-webservice
   #deployment_group: springboot-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
-  deployment_group: freelec-springboot2-webservice-group
-  region: ap-northeast-2
-  wait-until-deployed: true
+#  deployment_group: freelec-springboot2-webservice-group
+#  region: ap-northeast-2
+#  wait-until-deployed: true
 
 notifications:
   email:
